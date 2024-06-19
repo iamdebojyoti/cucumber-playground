@@ -47,8 +47,8 @@ jobs:
         SECRET: ${{ secrets.SECRET }}
       shell: bash
       run:  |
-        export "$NAME"
-        export "$SECRET"
+        export NAME=${{ vars.NAME }}
+        export SECRET=${{ secrets.SECRET }}
         ./gradlew cucumberCli
 
     - name: Upload cucumber artifact
