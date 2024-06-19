@@ -42,10 +42,13 @@ jobs:
       run: ./gradlew test
 
     - name: Cucumber Test
+      env:
+        NAME: ${{ secrets.NAME }}
+        SECRET: ${{ secrets.SECRET }}
       shell: bash
       run:  |
-        export NAME="abc"
-        export SECRET="def"
+        export "$NAME"
+        export "$SECRET"
         ./gradlew cucumberCli
 
     - name: Upload cucumber artifact
