@@ -12,10 +12,19 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      test-options:
+        description: "Test Option"
+        type: choice
+        required: true
+        default: 'No'
+        options:
+          - Yes
+          - No
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
