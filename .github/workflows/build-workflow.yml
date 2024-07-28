@@ -22,6 +22,7 @@ on:
         options:
           - Yes
           - No
+          - Maybe
 
 jobs:
   build:
